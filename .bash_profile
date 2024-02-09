@@ -31,3 +31,13 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # JAVA
 brew install java11
 export PATH="$(brew --prefix)/opt/openjdk@11/bin:$PATH"
+
+# Spark
+# Find the right version needed here: https://archive.apache.org/dist/spark/
+export SPARK_VERSION=3.2.1
+export HADOOP_VERSION=2.7
+export SPARK_DIR=~/.spark/$SPARK_VERSION
+mkdir -p $SPARK_DIR
+wget https://archive.apache.org/dist/spark/spark-$SPARK_VERSION/spark-$SPARK_VERSION-bin-hadoop$HADOOP_VERSION.tgz -O $SPARK_DIR/spark.tgz
+tar -xzf $SPARK_DIR/spark.tgz -C $SPARK_DIR
+rm $SPARK_DIR/spark.tgz
