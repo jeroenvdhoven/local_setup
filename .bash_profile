@@ -25,6 +25,7 @@ alias gst="git status"
 alias gco="git checkout"
 alias gcm="git commit"
 alias conda="mamba"
+alias git_prune='git remote prune origin && git branch --merged | egrep -v "(^\*|master|main|dev|devel)" | xargs git branch -d'
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
