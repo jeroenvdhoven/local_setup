@@ -1,11 +1,18 @@
 #! /bin/bash
 
+# setup
+cp ./.bash_profile ~/.bash_profile
+mkdir ~/scripts
+cp ./add-ssh.sh ~/scripts/
+
 # Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Mamba. potentially change the OSX version
 mkdir ~/.mamba
-curl -Ls https://micro.mamba.pm/api/micromamba/osx-arm64/latest | tar -C ~/.mamba -xvj bin/micromamba 
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh -O ~/mamba-script.sh
+bash ~/mamba-script.sh
+rm ~/mamba-script.sh
 echo -e "channels:\n  - conda-forge" > .condarc
 ~/.mamba/bin/micromamba shell init
 
