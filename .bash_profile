@@ -29,6 +29,9 @@ alias git_prune='git remote prune origin && git branch --merged | egrep -v "(^\*
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Mamba. Please still run `mamba init` at some point.
+export PATH="~/miniforge3/bin:$PATH"
+
 # JAVA
 brew install java11
 export PATH="$(brew --prefix)/opt/openjdk@11/bin:$PATH"
