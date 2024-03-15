@@ -7,6 +7,11 @@ cp ./add-ssh.sh ~/scripts/
 
 # Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Reload bash to recognise homebrew.
+exec bash -l
+
+# wget
+brew install wget
 
 # Mamba / Miniforge. potentially change the OSX version
 wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh -O ~/miniforge-script.sh
@@ -24,7 +29,7 @@ brew install bash-git-prompt
 brew install git bash-completion
 
 # Java
-brew install java11 wget
+brew install java11
 
 # Spark
 # Find the right version needed here: https://archive.apache.org/dist/spark/
