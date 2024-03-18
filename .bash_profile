@@ -18,7 +18,11 @@ GIT_PROMPT_FETCH_REMOTE_STATUS=0
 # . ~/.bash-git-prompt/gitprompt.sh
 
 # Git autocomplete
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+# For bash version >  4: untested.
+# [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+# For older versions
+BC_folder="$(brew --prefix bash-completion)"
+[ -f "${BC_folder}/etc/profile.d/bash_completion.sh" ] && source "${BC_folder}/etc/profile.d/bash_completion.sh"
 
 alias ll="ls -la"
 alias gst="git status"
@@ -34,3 +38,4 @@ export PATH="~/miniforge3/bin:$PATH"
 
 # JAVA
 export PATH="$(brew --prefix)/opt/openjdk@11/bin:$PATH"
+
