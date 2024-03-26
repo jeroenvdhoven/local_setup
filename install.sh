@@ -17,7 +17,7 @@ brew install wget
 wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh -O ~/miniforge-script.sh
 bash ~/miniforge-script.sh
 rm ~/miniforge-script.sh
-echo -e "channels:\n  - conda-forge" > .condarc
+echo -e "auto_activate_base: false\nchannels:\n  - conda-forge\nchannel_priority: true" > .condarc
 mamba init
 
 # Git prompt
