@@ -1,3 +1,3 @@
 #! /bin/bash
 
-ssh-add "~/.ssh/<keyname>"
+ssh-add --apple-use-keychain "~/.ssh/<keyname>"

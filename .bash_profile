@@ -39,3 +39,5 @@ export PATH="~/miniforge3/bin:$PATH"
 # JAVA
 export PATH="$(brew --prefix)/opt/openjdk@11/bin:$PATH"
 
+# Ssh-config for mac
+export APPLE_SSH_ADD_BEHAVIOR=UseKeychain
